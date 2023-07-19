@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DrawingBot Documentation</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&family=Oswald:wght@700&display=swap');
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="logo title-word">DrawingBot</h1>
+    <nav class="navigate">
+      <ul class="clear-list nav-list">
+        <li class="nav-item"><b>DrawingBot Documentation</b></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <img src="image/drawingbot.jpg" alt="DrawingBot">
+      <h2>Детальна документація по функціоналу DrawingBot</h2>
+      <h3>1.1 Промтинг - основа основ</h3>
+      <p>Давайте розберемо саме просте. Отже, промтинг, давайте розглянемо на прикладі, що це.</p>
+
+      <p>Давайте згенеруємо дівчину з зеленим волоссям, для цього треба написати і надіслати:</p>
+      <p><i>/draw 1girl, green eyes</i></p> 
+      <input class="visually-hidden" type="text" value="/draw 1girl, green eyes" id="firstPromt">
+      <button class="button" onclick="copyFunc()">Copy promt</button>
+      <p><img src="image/promt.jpg" alt="DrawingBot"></p>
+
+      <h3>1.2 Промтинг - результат</h3>
+      <p>Через 5-15 секунд вам пирйде результат, в мене вийшов такий результат:</p>
+      <p><img src="image/result.jpg" alt="DrawingBot"></p>
+
+      <h3>1.3 Промтинг - #txt2img (Текст в картинку)</h3>
+      <p>Це функція ШІ <b>Stable Diffusion</b> дозволяє перетворити текст в картинку, цей текст і є нашим промтом.</p>
+
+      <h3>1.4 Промтинг - #Vibrance (Модель)</h3>
+      <p><b>Модель</b> - це та частина нейромережі, яку тренують на конкретних зображеннях і завдяки яким нейромережа знає, що їй потрібно малювати, коли її просять згенерувати людину, котика, машину чи піцу.</p>
+      <br>
+
+      <h3>2.1 Функціонал - Model</h3>
+      <p>В <b>DrawingBot</b> існує 7 моделей, з них: </p>
+      <p><b>1.</b> Akasha</p>
+      <p><b>2.</b> Tranquility</p>
+      <p><b>3.</b> Aika</p>
+      <p><b>4.</b> Yami</p>
+      <p><b>5.</b> Furry</p>
+      <p><b>6.</b> Chroma</p>
+      <p><b>7.</b> Vibrance (Стандартна)</p>
+      <p><img src="image/models.jpg" alt="DrawingBot"></p>
+
+      <p>Вибрати модель можна так: </p>
+      <p><b>1.</b> Пишемо промт:</p>
+      <p><img src="image/stepmodel1.jpg" alt="DrawingBot"></p>
+
+      <p><b>2.</b> Нажимаємо на кнопку з картинкою пончика:</p>
+      <p><img src="image/stepmodel2.jpg" alt="DrawingBot"></p>
+
+      <p><b>3.</b> Вибираємо модель і нажимаємо кнопку <b>"Back"</b>:</p>
+      <p><img src="image/stepmodel3.jpg" alt="DrawingBot"></p>
+
+      <p><b>4.</b> Тепер на кнопці де був намальований пончик, буде написана модель яку ви виьрали. В залежності від моделі результат буде мати різну стилістику. Шукайте модель яка сподобаться вам найбільше.</p>
+      <p><img src="image/stepmodel2.jpg" alt="DrawingBot"></p>
+
+      <h3>2.2 Функціонал - Seed</h3>
+      <p>Кнопка <b>"Seed"</b> означає що нейромережа буде генерувати картинку по спеціальному ключу генерації, працює так само як в майнкрафті, якщо натиснути на кнопку <b>"Seed"</b>, а потім написати свій сід то картинка зегенерується з сідом який ви вказали. (Можна побачити приклад роботи на скріншотах прикріплених нижче)</p>
+      <p><img src="image/seed1.jpg" alt="DrawingBot"></p>
+      <p><img src="image/seed2.jpg" alt="DrawingBot"></p>
+      <p><img src="image/seed3.jpg" alt="DrawingBot"></p>
+
+      <h3>2.2 Функціонал - Negative promt</h3>
+      <p><b>"Negative promt"</b> - друга сама важлива функція після звичайного промта. Розберемося як він працює:</p>
+
+      <p>Давайте візьмемо набагато важчий і більший промт:</p>
+      <i>/draw masterpiece, best quality, 1girl, small breasts, solo, short hair, green hair, hair between eyes, orange eyes, glasses, semi_round eyewear, white background, school uniform, white uniform, ((close up face)), thin neck, anime style, beret, closed one eye, white flower</i>
+      <input class="visually-hidden" type="text" value="/draw masterpiece, best quality, 1girl, small breasts, solo, short hair, green hair, hair between eyes, orange eyes, glasses, semi_round eyewear, white background, school uniform, white uniform, ((close up face)), thin neck, anime style, beret, closed one eye, white flower" id="secondPromt">
+      <p><button class="button" onclick="copyFunc2()">Copy promt</button></p>
+
+      <p>Ось який результат ми отримали:</p>
+      <p><img class="result" src="image/result2.jpg" alt="DrawingBot"></p>
+      <a class="button clear-link" href="image/result2.jpg" download="image/result2.jpg">Download</a>
+
+      <p>Отже, отримавши картинку, і порівнявши з нашим промтом, ми можемо побачити, що в нашому промті немає промта який малював би бантик на одязі. Як це виправити? Для цього нам і потрібен <b>"Negative promt"</b>.</p>
+      <p>Для початку треба визначитися, що на НЕ треба на арті (bow on neck, bow on uniform)</p>
+      <p>Це нам і треба написати в <b>"Negative promt":</b></p>
+      <p><img src="image/negativepromt1.jpg" alt="DrawingBot"></p>
+
+      <p>Пишемо наш <b>"Negative promt":</b></p>
+      <p><img src="image/negativepromt2.jpg" alt="DrawingBot"></p>
+
+      <p>Через кнопку: <b>"🔧 Clear Negative Promt"</b> можна очистити ваш <b>"Negative promt"</b>.</p>
+
+      <br>
+
+      <p>Ми додали <b>"Negative promt"</b> Тепер спробуємо зегенерувати арт.</p>
+      <p>Ось який результат ми отримали:</p>
+      <p><img class="result" src="image/result3.jpg" alt="DrawingBot"></p>
+      <a class="button clear-link" href="image/result3.jpg" download="image/result3.jpg">Download</a>
+
+      <p>Тепер як ви можете побачити бантика в нас немає, замість нього нейромережа намалювала галстук, якщо не хочете і галстук, то дописуйте це в <b>"Negative promt"</b>.</p>
+
+      <h3>2.3 Функціонал - орієнтація</h3>
+      <p><img src="image/vertical.jpg" alt="DrawingBot"></p>
+      <p>Генерує вертекальне зообження:</p>
+      <p><img class="result" src="image/result4.jpg" alt="DrawingBot"></p>
+      <a class="button clear-link" href="image/result4.jpg" download="image/result4.jpg">Download</a>
+
+      <br>
+
+      <p><img src="image/horizontal.jpg" alt="DrawingBot"></p>
+      <p>Генерує горизонтальне зообження:</p>
+      <p><img class="result-hor" src="image/result5.jpg" alt="DrawingBot"></p>
+      <a class="button clear-link" href="image/result5.jpg" download="image/result5.jpg">Download</a>
+
+      <br>
+
+      <h3>2.3 Функціонал - Refimage</h3>
+      <p><b>"Refimage"</b> - може бути викорстаним для того щоб скопіювати позу з іншої картинки, для цього цю функцію частіше всього і використувують</p>
+      <p><img src="image/refimage.jpg" alt="DrawingBot"></p>
+      <p>Візьмемо цю картинку як референс пози:</p> 
+      <p><img class="result" src="image/reference.png" alt="DrawingBot"></p>
+      <a class="button clear-link" href="image/reference.png" download="image/reference.png">Download</a>
+      
+      <p>Відсилаємо картинку "Референс" для пози, а кнопку "🍪 ControlNet Mode:None" не чіпаємо.</p> 
+      <p><img src="image/refsend.jpg" alt="DrawingBot"></p>
+
+      <p>В вас після попереднього кроку з'явиться ця кнопка:</p> 
+      <p><img src="image/temp.jpg" alt="DrawingBot"></p>
+      <p>Якщо в вас ця кнопка не має такого ж значення як в мене, то поставте значення: <b>"0.95"</b></p> 
+      <p>Після цього нажимаємо на кнопку генерації і чекаємо на результат, на який ми зараз подивимося:</p> 
+      <p><img class="result" src="image/result6.jpg" alt="DrawingBot"></p>
+      <a class="button clear-link" href="image/result6.jpg" download="image/result6.jpg">Download</a>
+
+      <h2>На цьому все, ви тепер знайєте 95% всього основного і важливого про DrawingBot, бажаю вдачі в генерації, користуйтеся новими знаннями і поширюйте цю документацію! :)</h2>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="ftr-text">Documentation made by <a class="clear-link" href="https://t.me/Eirely">Eirely</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
